@@ -1,3 +1,7 @@
 name = "curlmate-landing"
 compatibility_date = "2024-01-01"
 main = "worker.ts"
+[observability]
+[observability.logs]
+enabled = false
+invocation_logs = true
