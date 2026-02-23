@@ -1,7 +1,7 @@
 export default {
   async fetch(request: Request): Promise<Response> {
     const url = new URL(request.url);
-    const herokuUrl = "https://curlmateweb-abc123.herokuapp.com";
+    const herokuUrl = "https://app.curlmate.dev"; // Change this to your actual Heroku app URL
 
     // Serve CSS
     if (url.pathname === "/styles.css") {
