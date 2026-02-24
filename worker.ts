@@ -173,6 +173,17 @@ footer {
       });
     }
 
+    // Proxy specific routes to the app
+    if (url.pathname.startsWith("/apidocs") || url.pathname.startsWith("/tos") || url.pathname.startsWith("/privacy")) {
+      const destinationUrl = `${herokuUrl}${url.pathname}${url.search}`;
+      return fetch(destinationUrl, {
+        headers: {
+          "User-Agent": request.headers.get("User-Agent") || "",
+          "Accept": request.headers.get("Accept") || "",
+        },
+      });
+    }
+
     // Redirect API routes to Heroku
     if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/auth/") || url.pathname.startsWith("/callback")) {
       const destinationUrl = `${herokuUrl}${url.pathname}${url.search}`;
