@@ -175,29 +175,29 @@ footer {
 
     if (url.pathname === "/docs" || url.pathname.startsWith("/docs/")) {
       const destinationUrl = `${herokuUrl}/apidocs${url.search}`;
-      return Response.redirect(destinationUrl, 301);
+      return Response.redirect(destinationUrl, 302);
     }
     
     // Redirect TOS and Privacy pages to heroku app for single source of truth and to avoid duplication
     if (url.pathname.startsWith("/tos") || url.pathname.startsWith("/terms")){
       const destinationUrl = `${herokuUrl}/tos.html${url.search}`;
-      return Response.redirect(destinationUrl, 301);
+      return Response.redirect(destinationUrl, 302);
     }
 
     if (url.pathname.startsWith("/privacy") || url.pathname.startsWith("/policy")){
       const destinationUrl = `${herokuUrl}/privacy.html${url.search}`;
-      return Response.redirect(destinationUrl, 301);
+      return Response.redirect(destinationUrl, 302);
     }
     
     if (url.pathname.startsWith("/faq")) {
       const destinationUrl = `${herokuUrl}/faq.html${url.search}`;
-      return Response.redirect(destinationUrl, 301);
+      return Response.redirect(destinationUrl, 302);
     }
     
     // Redirect older callbacks to heroku app for compatibility
     if ( url.pathname.startsWith("/callback")) {
       const destinationUrl = `${herokuUrl}${url.pathname}${url.search}`;
-      return Response.redirect(destinationUrl, 301);
+      return Response.redirect(destinationUrl, 302);
     }
 
     // Serve the landing page for all other routes
