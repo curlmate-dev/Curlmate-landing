@@ -26,13 +26,8 @@ header {
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-}
-
-.logo span {
-  color: #666;
+  height: 32px;
+  width: auto;
 }
 
 .hero {
@@ -146,6 +141,38 @@ footer {
   border-top: 1px solid #ccc;
   font-size: 0.9rem;
   color: #666;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  color: #666;
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: #333;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {

@@ -5,3 +5,6 @@ main = "worker.ts"
 [observability.logs]
 enabled = true
 invocation_logs = true
+[assets]
+directory = "./public"
+binding = "ASSETS"
