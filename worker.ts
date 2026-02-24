@@ -173,19 +173,29 @@ footer {
       });
     }
 
-    // Proxy specific routes to the app
-    if (url.pathname.startsWith("/apidocs") || url.pathname.startsWith("/tos") || url.pathname.startsWith("/privacy")) {
-      const destinationUrl = `${herokuUrl}${url.pathname}${url.search}`;
-      return fetch(destinationUrl, {
-        headers: {
-          "User-Agent": request.headers.get("User-Agent") || "",
-          "Accept": request.headers.get("Accept") || "",
-        },
-      });
+    if (url.pathname === "/docs" || url.pathname.startsWith("/docs/")) {
+      const destinationUrl = `${herokuUrl}/apidocs${url.search}`;
+      return Response.redirect(destinationUrl, 301);
+    }
+    
+    // Redirect TOS and Privacy pages to heroku app for single source of truth and to avoid duplication
+    if (url.pathname.startsWith("/tos") || url.pathname.startsWith("/terms")){
+      const destinationUrl = `${herokuUrl}/tos.html${url.search}`;
+      return Response.redirect(destinationUrl, 301);
     }
 
-    // Redirect API routes to Heroku
-    if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/auth/") || url.pathname.startsWith("/callback")) {
+    if (url.pathname.startsWith("/privacy") || url.pathname.startsWith("/policy")){
+      const destinationUrl = `${herokuUrl}/privacy.html${url.search}`;
+      return Response.redirect(destinationUrl, 301);
+    }
+    
+    if (url.pathname.startsWith("/faq")) {
+      const destinationUrl = `${herokuUrl}/faq.html${url.search}`;
+      return Response.redirect(destinationUrl, 301);
+    }
+    
+    // Redirect older callbacks to heroku app for compatibility
+    if ( url.pathname.startsWith("/callback")) {
       const destinationUrl = `${herokuUrl}${url.pathname}${url.search}`;
       return Response.redirect(destinationUrl, 301);
     }
