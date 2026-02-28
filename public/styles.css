@@ -81,21 +81,24 @@ header {
 .gif-grid {
   display: flex;
   flex-direction: column;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
+  gap: 4rem;
+  margin-top: 4rem;
 }
 
 .gif-card {
-  scroll-snap-align: start;
-  background: white;
-  border: 2px solid #222;
+  background: transparent;
+}
+
+.gif-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.gif-card img {
+  width: 100%;
   border-radius: 8px;
-  padding: 1rem;
-  min-height: calc(100vh - 4rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .gif-card h3 {
