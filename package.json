@@ -1,0 +1,14 @@
+{
+  "name": "curlmate-landing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "wrangler": "^3.0.0",
+    "@cloudflare/workers-types": "^4.20240101.0"
+  }
+}

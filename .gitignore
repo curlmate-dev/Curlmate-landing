@@ -1,0 +1,4 @@
+.wrangler/
+gifs/
+node_modules/
+dist/
