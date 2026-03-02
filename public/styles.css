@@ -98,6 +98,13 @@ header {
 
 .gif-card img {
   width: 100%;
+  border: black solid 1px;
+  border-radius: 8px;
+}
+
+.gif-card video {
+  width: 100%;
+  border: black solid 1px;
   border-radius: 8px;
 }
 
