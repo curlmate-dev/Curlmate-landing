@@ -203,4 +203,8 @@ footer {
   .gif-grid {
     grid-template-columns: 1fr;
   }
+
+  .desktop-only {
+    display: none;
+  }
 }
